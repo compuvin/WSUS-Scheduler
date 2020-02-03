@@ -9,11 +9,12 @@ $CSVLocation = "C:\LargeFolder\WSUS-Scheduler"
 $WSUSInfo = Get-WsusServer -PortNumber $WSUSPortNumber -Name $WSUSServerName
 
 #Get available updates to schedule
-Write-host "`nPlease wait while a list of available updates is generated from the server..."
+Write-Output "`nPlease wait while a list of available updates is generated from the server..."
 $WSUSApproved = Get-WsusUpdate -Classification All -Approval Approved -Status FailedOrNeeded -UpdateServer $WSUSInfo
 $WSUSApproved = $WSUSApproved | Out-GridView -PassThru -Title "Select updates to schedule"
 
 #OutCSV
-Write-host "`nThe following updates that you have selected have been scheduled for approval:"
+Write-Output "`nThe following updates that you have selected have been scheduled for approval:"
 $WSUSApproved
 $WSUSApproved | select UpdateID | Export-Csv "$CSVLocation\WSUSApprovalSelections.csv"
+pause
