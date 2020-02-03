@@ -10,3 +10,5 @@ Powershell script that I'm just messing with at this point. The idea is that the
 3. Create a scheduled task to run Approve-WSUSUpdates after hours
 
 Work in progress... More to come...
+
+[![CodeFactor](https://www.codefactor.io/repository/github/compuvin/wsus-scheduler/badge)](https://www.codefactor.io/repository/github/compuvin/wsus-scheduler)
