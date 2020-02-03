@@ -17,4 +17,3 @@ $WSUSApproved = $WSUSApproved | Out-GridView -PassThru -Title "Select updates to
 Write-Output "`nThe following updates that you have selected have been scheduled for approval:"
 $WSUSApproved
 $WSUSApproved | select UpdateID | Export-Csv "$CSVLocation\WSUSApprovalSelections.csv"
-pause
